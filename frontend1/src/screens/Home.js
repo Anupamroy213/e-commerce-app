@@ -17,7 +17,7 @@ export default function Home() {
 let data=useCart()
   const loadData = async () => {
     try {
-      let response = await fetch("http://localhost:5000/api/productData", {
+      let response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/productData`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'

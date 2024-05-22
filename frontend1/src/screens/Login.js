@@ -9,7 +9,7 @@ export default function Login() {
 
   const handleSignIn = async () => {
     try {
-      const response = await fetch('http://localhost:5000/loginuser', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/loginuser`,{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

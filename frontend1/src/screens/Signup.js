@@ -45,7 +45,7 @@ function Signup(){
             const updatedCredentials = { ...credentials, password: hashedPassword, cpassword: hashedcPassword };
     
             // Make the request with the updated credentials
-            const response = await axios.post('http://localhost:5000/register', updatedCredentials);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/register`, updatedCredentials);
             if (response.data.success) {
                 const { authToken } = response.data; // Access data directly using response.data
                 localStorage.setItem('authToken', authToken);

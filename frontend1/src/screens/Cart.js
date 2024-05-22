@@ -20,7 +20,7 @@ export default function Cart() {
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("userEmail");
     console.log(data,localStorage.getItem("userEmail"),new Date())
-    let response = await fetch("http://localhost:5000/api/OrderData",{
+    let response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/OrderData`,{
     
       method: 'POST',
       headers: {
